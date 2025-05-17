@@ -1,0 +1,126 @@
+unit Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.FB, FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.ExtCtrls, Vcl.DBCtrls, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  Vcl.Grids, Vcl.DBGrids;
+
+type
+  TFrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    BtnAlterar: TButton;
+    BtnCancelar: TButton;
+    BtnExcluir: TButton;
+    DBGrid1: TDBGrid;
+    conexao: TFDConnection;
+    QryClientes: TFDQuery;
+    DsClientes: TDataSource;
+    QryClientesID_AGENDA: TSmallintField;
+    QryClientesNOME_AGENDA: TStringField;
+    QryClientesFONE_AGENDA: TStringField;
+    QryClientesEMAIL_AGENDA: TStringField;
+    QryClientesRUA_AGENDA: TStringField;
+    QryClientesBAIRRO_AGENDA: TStringField;
+    EdtId: TDBEdit;
+    EdtNome: TDBEdit;
+    EdtEmail: TDBEdit;
+    EdtFone: TDBEdit;
+    EdtRua: TDBEdit;
+    EdtBairro: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    BtnIncluir: TButton;
+    BtnGravar: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure BtnGravarClick(Sender: TObject);
+    procedure BtnAlterarClick(Sender: TObject);
+    procedure BtnIncluirClick(Sender: TObject);
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnExcluirClick(Sender: TObject);
+  private
+    procedure inativecampos;
+    procedure ativecampos;
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+procedure TFrmPrincipal.BtnCancelarClick(Sender: TObject);
+begin
+  QryClientes.Cancel;
+  inativecampos;
+end;
+
+procedure TFrmPrincipal.BtnExcluirClick(Sender: TObject);
+begin
+  QryClientes.Delete;
+end;
+
+procedure TFrmPrincipal.BtnGravarClick(Sender: TObject);
+begin
+  QryClientes.Post;
+  conexao.Commit;
+  inativecampos;
+  ShowMessage('Registro Salvo com Sucesso!')
+end;
+
+
+procedure TFrmPrincipal.ativecampos;
+begin
+  EdtId.Enabled := False;
+  EdtNome.Enabled := True;
+  EdtEmail.Enabled := True;
+  EdtFone.Enabled := True;
+  EdtRua.Enabled := True;
+  EdtBairro.Enabled := True;
+end;
+
+procedure TFrmPrincipal.BtnAlterarClick(Sender: TObject);
+begin
+  QryClientes.Edit;
+  ativecampos;
+  EdtNome.SetFocus;
+end;
+
+
+procedure TFrmPrincipal.BtnIncluirClick(Sender: TObject);
+begin
+  QryClientes.Insert;
+  ativecampos;
+  EdtNome.SetFocus;
+end;
+
+procedure TFrmPrincipal.FormCreate(Sender: TObject);
+begin
+  conexao.Connected  := True;
+  QryClientes.Open();
+  inativecampos;
+end;
+
+procedure TFrmPrincipal.inativecampos;
+begin
+  EdtId.Enabled := False;
+  EdtNome.Enabled := False;
+  EdtEmail.Enabled := False;
+  EdtFone.Enabled := False;
+  EdtRua.Enabled := False;
+  EdtBairro.Enabled := False;
+end;
+
+end.
