@@ -38,7 +38,7 @@ object FrmPrincipal: TFrmPrincipal
   object Label4: TLabel
     Left = 512
     Top = 295
-    Width = 33
+    Width = 31
     Height = 15
     Caption = 'Bairro'
   end
@@ -65,7 +65,8 @@ object FrmPrincipal: TFrmPrincipal
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 739
+    ExplicitTop = 448
+    ExplicitWidth = 645
     object BtnAlterar: TButton
       Left = 281
       Top = 24

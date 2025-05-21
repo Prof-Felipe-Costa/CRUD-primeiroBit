@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2025/05/17 16:30:55.304,=C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/05/17 16:34:11.392,C:\Users\proff\OneDrive\Desktop\prog\CRUD primeiroBit\CRUD-primeiroBit\delphi\Principal.dfm=C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2025/05/17 16:34:11.392,C:\Users\proff\OneDrive\Desktop\prog\CRUD primeiroBit\CRUD-primeiroBit\delphi\Principal.pas=C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/05/17 16:34:33.183,C:\Users\proff\OneDrive\Desktop\prog\CRUD primeiroBit\CRUD-primeiroBit\delphi\Crud.dproj=C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/05/17 16:30:55.000.304,=C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/05/17 16:34:11.000.392,C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\proff\OneDrive\Desktop\prog\CRUD primeiroBit\CRUD-primeiroBit\delphi\Principal.dfm</Transaction>
+    <Transaction>2025/05/17 16:34:11.000.392,C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\proff\OneDrive\Desktop\prog\CRUD primeiroBit\CRUD-primeiroBit\delphi\Principal.pas</Transaction>
+    <Transaction>2025/05/17 16:34:33.000.183,C:\Users\proff\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\proff\OneDrive\Desktop\prog\CRUD primeiroBit\CRUD-primeiroBit\delphi\Crud.dproj</Transaction>
   </Transactions>
 </BorlandProject>
